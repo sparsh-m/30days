@@ -9,13 +9,13 @@
 """
 #two pass solution
 def twoSum(nums, target):
-    map={}
+    maps={}
     for i in range(len(nums)):
-        map[nums[i]] = i
+        maps[nums[i]] = i
 
     for i in range(len(nums)):
-        if target-nums[i] in map.keys() and i != map[target-nums[i]]:
-            return [i,map[target-nums[i]]]
+        if target-nums[i] in maps.keys() and i != maps[target-nums[i]]:
+            return [i,maps[target-nums[i]]]
 
 #one pass is better
 nums = [3,3,4,2]
