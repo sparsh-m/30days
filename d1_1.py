@@ -1,23 +1,13 @@
 #https://leetcode.com/problems/find-the-duplicate-number/
-def findDuplicate_1(nums):
-    n = len(nums)
-    rtotal = (n*(n+1))/2
-    total = sum(nums)
-    
-    rsq = (n*(n+1)*((2*n)+1))/6
-    sq = 0
-    for i in range(n):
-        sq += nums[i]**2
-    
-    aminusb = rtotal - total
-    aplusb = (rsq - sq)/aminusb
-    
-    a = (aplusb + aminusb)/2
-    b = aplusb - a
-    
-    return int(b)
-
-#correct approach
+"""
+1)MAke a hash table of the nums
+2)Let n be the difference between the length of the hash table and the original array
+3)find the differences between the sum of the set and the arr.
+4)Divide this difference by the number of repititions to find the number that was repeated
+Time Complexity: O(n)
+Space Complexity: O(n)
+Can also be done by Floyd's Tortoise and Hare
+"""
 def findDuplicate(nums):
     noRepeat = set(nums)
     n = len(nums) - len(noRepeat)
