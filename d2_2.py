@@ -1,4 +1,13 @@
 #https://leetcode.com/problems/pascals-triangle/
+"""
+1)If num_rows == 0 return 0
+2)If num_rows is 1 or 2 return hardcoded solution.
+3)If num_rows is greater than zero, for ith row, arr[i][0] = 1 or arr[i][i] = 1
+4)arr[i][j] = arr[i-1][j-1] + arr[i-1][j+1]
+
+Time Complexity: O(num_rows^2/2)=O(n^2)
+Space Complexity: o(num_rows^2)
+"""
 def sol(A):
     sol = []
     if(A==0):

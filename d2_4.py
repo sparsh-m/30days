@@ -1,3 +1,17 @@
+"""
+inversion how many times position changes in an array during merge sort
+1)Initiate merge sort left and right trees return an inversion numer
+3)This number is further incremented upon merging
+eg [8,4,2,1]
+                    8,4,2,1
+            8,4                 2,1
+        8       4           2         1
+            4,8(1)              1,2(1)
+                    1,2,4,8(2+2)inverions as both 1 and two are placed bofore 8 and 4
+Total 6 inversion.
+Time Complexity: O(nlog(n))
+Space Complexity: O(n), temp arr
+"""
 def mergesort(arr):
     n = len(arr)
     temp_arr=[0]*n
@@ -20,7 +34,7 @@ def merge(arr, temp_arr, left, mid, right):
     k=left
     j=mid+1
 
-    while i<=left and j<=right:
+    while i<=mid and j<=right:
         if arr[i]<=arr[j]:
             temp_arr[k]=arr[i]
             i+=1
@@ -31,7 +45,7 @@ def merge(arr, temp_arr, left, mid, right):
             j+=1
             k+=1
 
-    while i<=left:
+    while i<=mid:
         temp_arr[k]=arr[i]
         i+=1
         k+=1
@@ -46,5 +60,5 @@ def merge(arr, temp_arr, left, mid, right):
 
     return inv_count
 
-arr = [8,4,2,1]
+arr = [4,5,6,1,2,3]
 print("The number of inversions", mergesort(arr))
