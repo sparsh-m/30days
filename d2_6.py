@@ -12,6 +12,7 @@ rotate each element in a side one by one
 3 -> 9
 9 -> 7
 7 -> 1
+Time complexity for n*n matrix is O(n^2/8)
 """
 def rotate(matrix):
     rows = len(matrix)
