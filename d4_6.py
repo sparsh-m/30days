@@ -1,4 +1,12 @@
 #https://leetcode.com/problems/longest-substring-without-repeating-characters/
+"""
+1)Define two pointers i and j, j+1-i will give length of
+the current non repeating substring.
+2)If arr[j] is not in hash table save it and its index, and update max_len.
+3)If arr[j] is in the hash table, i = max(i, hash_table[arr[j]]+1) 
+and delete arr[j] from hash table.
+
+"""
 def solve(s):
     n = len(s)
     i=0

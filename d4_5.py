@@ -1,4 +1,11 @@
-#https://leetcode.com/pgitroblems/xor-queries-of-a-subarray/
+#https://leetcode.com/problems/xor-queries-of-a-subarray/
+"""
+XOR: Return 1 id bits are different, 0 if same.
+XOR property
+a^b^c = x
+b^c = x^a
+Time Complexity:O(n) 
+"""
 def xor(arr, queries):
     n = len(arr)
     for i in range(1,n):

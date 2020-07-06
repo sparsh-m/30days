@@ -1,45 +1,42 @@
-#3 sum two pointers
-def solve(nums, target):
-    triplets = set()
-    for i in range(len(nums)):
-        l=0
-        r=len(nums)-1
+#https://leetcode.com/problems/3sum/
+def threeSum(nums):
+    res = []
+    nums.sort()
+    length = len(nums)
+    for i in range(length-2):
+        if nums[i]>0: break
+        if i>0 and nums[i]==nums[i-1]: continue
+        l, r = i+1, length-1
         while l<r:
-            if l==i:
+            total = nums[i]+nums[l]+nums[r]
+            if total<0:
                 l+=1
-            if r==i:
+            elif total>0:
                 r-=1
-            if nums[l]+nums[r] == target-nums[i]:
-                temp = set()
-                temp.add(nums[i])
-                temp.add(nums[l])
-                temp.add(nums[r])
-                triplets.add(tuple(temp))
-                break
-            elif nums[l]+nums[r] > target-nums[i]:
-                r-=1
-            elif nums[l]+nums[r] < target-nums[i]:
-                l+=1   
-    return triplets
-
-
-#3sum hash set
-def sum3(nums, target):
-    solution=[]
-    for i in range(len(nums)):
-        s = set()
-        curr = target-nums[i]
-        for j in range(i+1, len(nums)):
-            if curr-nums[j] in s:
-                solution.append([nums[i], nums[j], curr-nums[j]])
-                break
             else:
-                s.add(nums[j])
-    return solution
-
-#print(sum3([1, 4, 45, 6, 10, 8],22))
-
+                res.append([nums[i], nums[l], nums[r]])
+                while l<r and nums[l]==nums[l+1]:
+                    l+=1
+                while l<r and nums[r]==nums[r-1]:
+                    r-=1
+                l+=1
+                r-=1
+    return res
 #4sum two pointers as it uses less memory
+"""
+1)If the length of the nums is less than 4 then 4sum isn't possible
+so return empty array.
+2)sort the array
+3)Declare a solution set
+4)In n^2 elements explore every pair of elements
+5)Now declare two pointers, l and r if nums[l]+nums[r] == target-nums[i]-nums[j]
+add the numbers to sol.
+6)If nums[l]+nums[r] < target-nums[i]-nums[j], increment l
+7)If nums[l]+nums[r] > target-nums[i]-nums[j], decrement r
+
+Time Complexity: O(n^3)
+Space Complexity: O(1)
+"""
 def fourSum_twoPointer(nums, target):
     n = len(nums)
     if n<4:
@@ -79,4 +76,4 @@ def fourSum_twoPointer(nums, target):
 
 nums=[-3,-2,-1,0,0,1,2,3]
 target=0
-print(fourSum_twoPointer(nums,target))
+#print(fourSum_twoPointer(nums,target))
