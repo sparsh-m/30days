@@ -1,3 +1,4 @@
+#Remove N-th node from back of LinkedList
 class ListNode:
      def __init__(self, val=0, next=None):
          self.val = val
@@ -20,11 +21,16 @@ def remove(head, n):
 		while i<nfromfront-1:
 			curr = curr.next
 			i+=1
-		
+		#deletion of node
 		curr.next = curr.next.next
 	return head
 	
-#better solution but it isnt necesarrily a one pass
+#One Pass
+#Moves the first pointer n+1 position.
+#Starts moving second pointer and first from n+1 by one position
+#When first reaches None second will be at the element to be deleted
+#TC: O(n)
+#SC: O(n) 
 def remove2(head, n):
 	dummy = ListNode()
 	dummy.next = head

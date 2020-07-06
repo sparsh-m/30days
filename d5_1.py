@@ -3,7 +3,14 @@ class ListNode:
      def __init__(self, val=0, next=None):
          self.val = val
          self.next = next
+"""
+None <- prev curr -> next->None
+prev <- curr  next
+prevprev <- prev curr->None
 
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
 def reverseList(head):
 	prev=None
 	curr=head

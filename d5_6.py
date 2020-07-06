@@ -2,7 +2,11 @@ class ListNode:
      def __init__(self, val=0, next=None):
          self.val = val
          self.next = next
-
+"""
+Basic Carry over mechanism.
+Time Complexity: O(n)
+Space Complexity: O(n)
+"""
 def addTwoNumbers(l1, l2):
 	dummy = ListNode(0)
 	curr = dummy

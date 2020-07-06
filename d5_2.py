@@ -1,4 +1,8 @@
 #https://leetcode.com/problems/middle-of-the-linked-list/submissions/
+"""
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
 import math
 
 class ListNode:
@@ -6,7 +10,8 @@ class ListNode:
          self.val = val
          self.next = next
 
-def counNodes(head):
+#returns the position of the middle node
+def countNodes(head):
 	n=0
 	curr=head
 	while curr:
@@ -20,6 +25,8 @@ def middleNode(head):
 	mid=countNodes(head)
 	i=1
 	curr=head
+	#less than mid as curr=curr.next threfore
+	#one curr further is returned
 	while i<mid:
 		curr=curr.next
 		i+=i
