@@ -80,11 +80,3 @@ board=[
 print(solve2(board,0,0))
 for i in board:
 	print(i)
-
-def p (row,col):
-	i = row - row%3
-	j = col - col%3
-	for k in range(3):
-		for l in range(3):
-			print(i+k,j+l)
-p(4,7)
