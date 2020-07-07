@@ -1,3 +1,4 @@
+#https://leetcode.com/problems/palindrome-linked-list/
 class ListNode:
      def __init__(self, val=0, next=None):
          self.val = val
@@ -45,6 +46,7 @@ def pal(head):
 		fast = fast.next.next
 		slow = slow.next
 	
+	# head->node----->mid<------node<-revhead
 	prev = None
 	curr = slow
 	while curr:
