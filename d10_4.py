@@ -35,9 +35,7 @@ return all possible subsets (the power set).
 def subsets(nums):
 	def backtracking(start=0, subset=[]):
 		if k==len(subset):
-			#if subset length is equal to len req of the powerset
 			res.append(subset)
-			return
 		#start prevent repitition
 		for i in range(start,len(nums)):
 			#backtrack
@@ -48,27 +46,7 @@ def subsets(nums):
 		backtracking()
 	return res
 
-"""def subsets(nums):
-	def backtrack(first = 0, curr = []):
-		# if the combination is done
-		print(len(curr),k)
-		if len(curr) == k:
-			output.append(curr)
-			return
-		for i in range(first, n):
-			# add nums[i] into the current combination
-			#curr.append(nums[i])
-			# use next integers to complete the combination
-			backtrack(i + 1, curr+[nums[i]])
-			# backtrack
-			#curr.pop()
-	
-	output = []
-	n = len(nums)
-	for k in range(n + 1):
-		backtrack()
-	return output
-"""
-nums = [1,2,3,4,5,6,7,8,9,0]
+
+nums = [1,2,3]
 l = subsets(nums)
 print(l)
