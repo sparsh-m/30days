@@ -1,7 +1,9 @@
 #https://leetcode.com/problems/combination-sum/submissions/
 """
 This is the desired solution
-Time Complexity: O()
+Time Complexity: O(k*2^n)
+We need O(k) time to copy new linkedlist
+when we get one combination
 """
 
 def solve(candidates, target):
@@ -31,7 +33,7 @@ def combinationSum(candidates,target):
 def helper(candidates,target,res,total,subset):
 	if total>=target:
 		if total==target:
-			#print(subset)
+			print(subset)
 			flag = True
 			for k in res:
 				if k==sorted(subset):
