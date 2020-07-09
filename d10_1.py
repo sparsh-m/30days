@@ -1,3 +1,27 @@
+#https://leetcode.com/problems/combination-sum/submissions/
+"""
+This is the desired solution
+Time Complexity: O()
+"""
+
+def solve(candidates, target):
+	#These start and end pointers prevent the repetioition which
+	# happens in the above case and we have to use sets
+	def backtrack(target, start, end, subset):
+		if target == 0:
+			res.append(subset)
+		elif target>0:
+			for i in range(start, end):
+				print(subset)
+				backtrack(target-candidates[i], i, end, subset+[candidates[i]])
+	res = []
+	backtrack(target, 0, len(candidates) ,[])
+	return res
+a=[7,2,5,1]
+n=9
+ans = solve(a,n)
+print(ans)
+
 def combinationSum(candidates,target):
 	candidates.sort()
 	res=[]
@@ -17,8 +41,3 @@ def helper(candidates,target,res,total,subset):
 	else:
 		for i in range(len(candidates)):
 			helper(candidates,target,res,total+candidates[i],subset+[candidates[i]])
-
-a=[7,3,2]
-n=18
-l=combinationSum(a,n)
-print(l)
