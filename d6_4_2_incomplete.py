@@ -1,25 +1,26 @@
+#https://leetcode.com/problems/linked-list-cycle-ii/
 class ListNode:
      def __init__(self, x):
          self.val = x
          self.next = None
 def detectCycle(head):
     if head==None or head.next == None:
-		return None
+		  return None
     slow = head
     fast = head
     flag = False
     while fast and fast.next:
-        slow = slow.next
-        fast = fast.next.next
-        if slow == fast:
-			meetingNode = slow
-			flag =  True
-			break
+      slow = slow.next
+      fast = fast.next.next
+      if slow == fast:
+			  meetingNode = slow
+			  flag =  True
+			  break
     if flag:
-		start = head
-		while start != meetingNode:
-			start = start.next
-			meetingNode = meetingNode.next
+		  start = head
+		  while start != meetingNode:
+			  start = start.next
+			  meetingNode = meetingNode.next
 		return meetingNode
     
 a = ListNode(1)

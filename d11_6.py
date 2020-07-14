@@ -1,5 +1,6 @@
 #find median of an unsorted array.
 #https://www.youtube.com/watch?v=RItfXpx3SD4
+#ALso try method4, https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/
 nums = [1,2,3,4,5,6,7,8]
 k = (len(nums)//4)*2
 
