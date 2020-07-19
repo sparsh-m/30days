@@ -15,7 +15,7 @@ class MyStack:
         """
         self.queue.append(x)        
 
-    O(n)
+    #O(n)
     def pop(self) -> int:
         """
         Removes the element on top of the stack and returns that element.

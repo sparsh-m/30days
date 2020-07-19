@@ -21,7 +21,9 @@ class MyQueue:
         while len(self.stack)>1:
             temp_stack.append(self.stack.pop())
         front_element = self.stack.pop()
-        self.stack = temp_stack
+        #Unlike queues stacks get reversed when pushed
+        #into another stack
+        self.stack = temp_stack[::-1]
         return front_element
         
 
@@ -29,11 +31,21 @@ class MyQueue:
         """
         Get the front element.
         """
+        temp_stack = list()
         
+        while len(self.stack)>1:
+            temp_stack.append(self.stack.pop())
+        front_element = self.stack.pop()
+        #Since we dont want to remove the first element
+        #push it back in
+        temp_stack.append(front_element)
+        
+        self.stack = temp_stack[::-1]
+        return front_element
+
 
     def empty(self) -> bool:
         """
         Returns whether the queue is empty.
         """
-        
-
+        return not self.stack
