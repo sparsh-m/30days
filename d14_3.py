@@ -7,7 +7,6 @@ def solve(A):
     stack = list()
     max_area = 0
     for i in range(0,len(A)+1):
-        #
         while stack and (i==len(A) or A[i] < A[stack[-1]]):
             height = A[stack[-1]]
             stack.pop()
