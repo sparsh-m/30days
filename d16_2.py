@@ -23,8 +23,6 @@ def ta(pattern):
 ta("aabaabaaa")
 
 def KMP(pattern, text):
-    #res keeps indices of all occurences
-    res = []
     tp = ta(pattern)
     i,j = 0,0
     while i<len(text) and j<len(pattern):
@@ -36,6 +34,7 @@ def KMP(pattern, text):
                 j = tp[j-1]
             else:
                 i+=1
+        #string match
         if j==len(pattern):
             return True
     return False
@@ -43,16 +42,3 @@ pattern = "aq"
 text = "abababab"
 res = KMP(pattern, text)
 print(res)
-
-def tempArray(s):
-    arr = [0]*len(s)
-    j,i = 0,1
-    while i<len(s):
-        if s[i]==s[j]:
-            arr[i] = j+1
-            i+=1
-            j+=1
-        else:
-            if j!=0:
-                j = arr[j-1]
-            else:
