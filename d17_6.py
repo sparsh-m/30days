@@ -1,4 +1,5 @@
 #Bottom View
+
 class TreeNode:
     def __init__(self, val = 0, left = None, right = None):
         self.val = val
@@ -17,6 +18,7 @@ def bottomView(root):
     while len(queue)>1:
         temp, level = queue.popleft()
         while temp != stop:
+            #latest elemet for the number is chosen
             d[level] = temp.val
             if temp.left:
                 queue.append((temp.left, level-1))
