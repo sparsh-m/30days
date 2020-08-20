@@ -19,7 +19,7 @@ Time Complexity O(N)
 def solve(nums):
     if not nums:
             return 0
-    dp = []*len(nums)
+    dp = []
     dp.append(nums[0])
     for i in range(1, len(nums)):
         flag = 1
@@ -31,8 +31,16 @@ def solve(nums):
         #print(dp)
         if flag==1:
             dp.append(nums[i])
+    print(dp)
     return len(dp)
 
 nums = [0,8,4,12,2]
 a = solve(nums)
 print(a)
+
+# def solve(nums):
+#     dp = [0]*len(nums)
+#     for i in range(1, len(nums)):
+#         flag = 1:
+#         for j in range(i):
+#             if nums

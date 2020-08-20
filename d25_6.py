@@ -16,5 +16,5 @@ def solve(nums):
     print(sumStore)
     return max(sumStore)
 
-nums = [10, 5, 4, 3]
+nums = [1, 101, 2, 3, 100, 4, 5]
 print(solve(nums))

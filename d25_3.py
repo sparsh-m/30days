@@ -19,5 +19,5 @@ def solve(text1, text2):
     print(len(dp[0]), len(dp))
     return dp[-1][-1]
 
-a = solve("bsbininm","jmjkbkjkv")
+a = solve("abt","atm")
 print(a)

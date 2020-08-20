@@ -29,6 +29,7 @@ def nextPermutation(nums):
                 j -= 1
         i -= 1
     
+    #reversing when nums[i]>nums[i-1] not satisfied
     a=0
     b=len(nums)-1
     while(a<b):

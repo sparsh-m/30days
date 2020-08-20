@@ -1,4 +1,5 @@
 #https://leetcode.com/problems/merge-intervals/
+
 """
 1)Sort the intervals on the basis of their starting points.
 2)let merged be the final list of merged elements

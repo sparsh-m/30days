@@ -10,7 +10,8 @@ def MatrixChainOrder(p, n):
     # For simplicity of the program, one extra row and one 
     # extra column are allocated in m[][].  0th row and 0th 
     # column of m[][] are not used 
-    m = [[0 for x in range(n)] for x in range(n)] 
+    m = [[0 for x in range(n)] for x in range(n)]
+    print(n)
   
     # m[i,j] = Minimum number of scalar multiplications needed 
     # to compute the matrix A[i]A[i+1]...A[j] = A[i..j] where 
@@ -38,8 +39,9 @@ def MatrixChainOrder(p, n):
     return m[1][n-1] 
   
 # Driver program to test above function 
-arr = [1, 2, 3 ,4] 
+arr = [2,3,4,5,7]
 size = len(arr) 
   
 print("Minimum number of multiplications is " +
        str(MatrixChainOrder(arr, size))) 
+
