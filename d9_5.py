@@ -29,7 +29,6 @@ def helper(visited, res, subset, nums):
 			helper(visited, res, subset+[nums[i]], nums)
 			print(i,subset)
 			visited.remove(i)
-nums=["a","b","c","d","e"]
+nums=["a","b","c"]
 l = permute(nums)
 print(l, len(l))
-
